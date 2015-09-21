@@ -1,18 +1,32 @@
-  var beerCount = function(decrease, bottles) {
-    var integers = [];
-      for (var i = 1; i <= bottles; i++) {
-        if (i - decrease1 === 0) {
-          integers.push(i);
+  var beerCount = function(bottlesNumber) {
+  //var integers = [];
+  //  for (var i = 1; i <= bottles; i-) {
+
+
+    if (bottlesNumber === 0) {
+      return "no more bottles of beer!";
+    } else if (bottlesNumber === 1) {
+      "1 bottle of beer on the wall, 1 bottle of beer";
+    } else if (bottlesNumber === 2 {
+      "2 bottles of beer on the wall, 2 bottles of beer";
+      else {
+      return bottlesNumber + "bottles of beer on the wall," + bottlesNumber
+      "bottles of beer, take one down and pass it around," +
+      bottlesNumber - 1 + "bottles of beer on the wall!"
+      + beerCount(bottlesNumber - 1);
+      }
+    })
+    //integers.push(i);
         }
       }
-return integers;
+    return integers;
 }
 
 $(document).ready(function() {
-  $("form#count-by").submit(function(event) {
-    var decrease1 = parseInt($("input#decrease1").val());
-    var bottles = parseInt($("input#bottles").val());
-    var result = beerCount(decrease1, bottles);
+  $("form#beerBottles").submit(function(event) {
+    //var decrease1 = parseInt($("input#decrease1").val());
+    var bottles = parseInt($("input#bottlesNumber").val());
+    var result = beerCount(bottlesNumber);
 
     $(".output").text(result);
     $("result").show();
